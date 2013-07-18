@@ -14,7 +14,7 @@ AM_CPPFLAGS = -I$(top_srcdir) -I$(top_builddir)\
 	      -I$(top_srcdir)/tests/testlib \
 	       @CLIBFLAGS@
 
-LDADD = $(top_builddir)/src/libstatgrab/libstatgrab.la $(top_builddir)/tests/testlib/libtestlib.a @LINKFLAGS@
+LDADD = $(top_builddir)/src/libstatgrab/libstatgrab.la $(top_builddir)/tests/testlib/libtestlib.la @LINKFLAGS@
 
 if TEST_SCRIPTS
 full_stats_edit=	$(PERL5) $(srcdir)/../testlib/mk_run_tests.pl \

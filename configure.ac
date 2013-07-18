@@ -575,12 +575,13 @@ AC_INCLUDES_DEFAULT
 	],
 	[cygwin], [
 		AC_DEFINE(CYGWIN, , [Building on Cygwin])
+		LINKFLAGS="-no-undefined"
 	],
 	[mingw32], [
 		AC_DEFINE(MINGW, , [Building on MinGW])
 		AC_DEFINE(WINVER, 0x0500, [Building for Windows 2000])
 		AM_CONDITIONAL(MINGW, true)
-		LINKFLAGS="-lpdh -lIphlpapi -lpsapi -lnetapi32"
+		LINKFLAGS="-no-undefined -lpdh -lIphlpapi -lpsapi -lnetapi32"
 	],
 	[
 		AC_MSG_WARN([Build on unknown OS: $host_os - many functions might be not functional])
